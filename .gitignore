@@ -17,6 +17,8 @@ xcuserdata
 profile
 *.moved-aside
 
+.idea/
+
 # rails etc.
 db/*.db
 db/*.sqlite3
