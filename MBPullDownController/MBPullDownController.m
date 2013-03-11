@@ -183,13 +183,15 @@ static CGFloat const kDefaultCloseDragOffset = 44.f;
 		UIView *containerView = self.view;
 		UIView *newView = new.view;
 		if (newView) {
-			newView.frame = containerView.bounds;
+            CGRect f = containerView.bounds;
+            f.size.height = f.size.height - self.openBottomOffset;
+            newView.frame = f;
 			[containerView insertSubview:newView atIndex:0];
 		}
 	}
 }
 
-#pragma mark - BacgroundView
+#pragma mark - BackgroundView
 
 - (void)setBackgroundView:(UIView *)backgroundView {
 	[_backgroundView removeFromSuperview];
